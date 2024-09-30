@@ -1,10 +1,29 @@
 import styled from "styled-components";
 import cssVars from "../../../styles/cssVars";
 
-const StyledDraggableWindow = styled.div`
+// type
+type StyledDraggableWindowType = {
+  $size?: "small" | "medium" | "large";
+  $isOpen?: boolean;
+};
+
+const StyledDraggableWindow = styled.div<StyledDraggableWindowType>`
   box-shadow: 7px 7px 0px 0px rgba(0, 0, 0, 0.25);
-  width: 600px;
+  width: ${({ $size }) =>
+    $size === "small" ? "300px" : $size === "large" ? "900px" : "600px"};
   border-radius: 8px;
+  position: absolute;
+
+  ${({ $isOpen }) =>
+    $isOpen
+      ? `
+    pointer-events: auto;
+    opacity: 1;
+    `
+      : `
+    pointer-events: none;
+    opacity: 0;
+    `}
 
   header {
     border-top-left-radius: 6px;

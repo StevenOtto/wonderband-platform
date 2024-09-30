@@ -2,18 +2,25 @@ import React from "react";
 import Draggable from "react-draggable"; // Both at the same time
 import StyledDragableWindow from "./DraggableWindow.styles";
 
+export type DraggableWindowUIProps = {
+  isOpen: boolean;
+  style?: React.CSSProperties;
+  closeCallback: () => void;
+  onStart: () => void;
+};
+
 type DragableWindowProps = {
   title: string;
   children: React.ReactNode;
+  size?: "small" | "medium" | "large";
 };
 
-const DraggableWindow: React.FC<DragableWindowProps> = ({
-  title,
-  children,
-}) => {
+const DraggableWindow: React.FC<
+  DragableWindowProps & DraggableWindowUIProps
+> = ({ title, children, size = "medium", isOpen, closeCallback, onStart }) => {
   return (
-    <Draggable handle=".dragHandle">
-      <StyledDragableWindow>
+    <Draggable handle=".dragHandle" onStart={onStart}>
+      <StyledDragableWindow $size={size} $isOpen={isOpen}>
         <header className="dragHandle">
           <h2>{title}</h2>
           <div className="bars">
@@ -21,7 +28,7 @@ const DraggableWindow: React.FC<DragableWindowProps> = ({
             <span></span>
             <span></span>
           </div>
-          <button className="close">
+          <button className="close" onClick={() => closeCallback()}>
             <span>x</span>
           </button>
         </header>
