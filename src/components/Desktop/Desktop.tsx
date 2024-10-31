@@ -152,7 +152,7 @@ const Desktop: React.FC = () => {
           />
         );
       }),
-    [openWindows, windowFocus, closeWindow, setWindowFocus]
+    [openWindows, windowFocus, closeWindow, setWindowFocus, openWindow]
   );
 
   return (
