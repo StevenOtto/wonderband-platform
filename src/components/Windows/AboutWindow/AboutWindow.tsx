@@ -11,14 +11,14 @@ const AboutWindow: React.FC<DraggableWindowUIProps> = ({
   closeCallback,
 }) => {
   return (
-    <DraggableWindow
-      title="Over de wonderband"
-      size="large"
-      isOpen={isOpen}
-      onStart={onStart}
-      closeCallback={closeCallback}
-    >
-      <StyledAboutWindow style={style}>
+    <StyledAboutWindow style={style}>
+      <DraggableWindow
+        title="Over de wonderband"
+        size="large"
+        isOpen={isOpen}
+        onStart={onStart}
+        closeCallback={closeCallback}
+      >
         <div className="inner">
           <div className="left">
             <div className="text-wrap text-wrap--green">
@@ -52,8 +52,8 @@ const AboutWindow: React.FC<DraggableWindowUIProps> = ({
             </div>
           </div>
         </div>
-      </StyledAboutWindow>
-    </DraggableWindow>
+      </DraggableWindow>
+    </StyledAboutWindow>
   );
 };
 

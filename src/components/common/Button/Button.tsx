@@ -4,7 +4,7 @@ import StyledButton from "./Button.styles";
 export type ButtonThemes = "primary" | "secondary" | "tertiary";
 
 export type ButtonProps = {
-  theme: ButtonThemes;
+  theme?: ButtonThemes;
   text: string;
   onClick?: () => void;
   type?: "button" | "submit" | "reset";

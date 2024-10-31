@@ -46,13 +46,13 @@ const ShowsWindow: React.FC<DraggableWindowUIProps> = ({
   closeCallback,
 }) => {
   return (
-    <DraggableWindow
-      title="Optredens"
-      isOpen={isOpen}
-      onStart={onStart}
-      closeCallback={closeCallback}
-    >
-      <StyledShowsWindow style={style}>
+    <StyledShowsWindow style={style}>
+      <DraggableWindow
+        title="Optredens"
+        isOpen={isOpen}
+        onStart={onStart}
+        closeCallback={closeCallback}
+      >
         <div className="inner">
           <h3>Aankomende optredens</h3>
           <ul>
@@ -80,10 +80,12 @@ const ShowsWindow: React.FC<DraggableWindowUIProps> = ({
               ))}
           </ul>
 
+          <Button theme="primary" text="Boeken" />
           <Button theme="secondary" text="Boeken" />
+          <Button theme="tertiary" text="Boeken" />
         </div>
-      </StyledShowsWindow>
-    </DraggableWindow>
+      </DraggableWindow>
+    </StyledShowsWindow>
   );
 };
 

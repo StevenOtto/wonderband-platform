@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import cssVars from "../../../styles/cssVars";
+import { DraggabbleWindowOuter } from "../../../components/common/DraggableWindow/DraggableWindow.styles";
 
-const StyledAboutWindow = styled.div`
+const StyledAboutWindow = styled(DraggabbleWindowOuter)`
   .inner {
     padding: 40px 30px 20px 50px;
     display: flex;

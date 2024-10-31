@@ -32,7 +32,7 @@ export enum Colors {
   beigeDark = "#E1DAC7",
   green = "#00EF2C",
   blue = "#9BC2C4",
-  darkGreen = "#0B6E71",
+  darkGreen = "#064749",
   purple = "#FB49BA",
 }
 

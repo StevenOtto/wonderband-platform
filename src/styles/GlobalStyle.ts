@@ -25,6 +25,8 @@ const GlobalStyle = createGlobalStyle`
         width: 100%;
         padding: 0;
         min-height: 100vh;
+        height: 100vh;
+        width: 100vw;
         overflow-x: hidden;
         margin: 0;
         overscroll-behavior-y: none;

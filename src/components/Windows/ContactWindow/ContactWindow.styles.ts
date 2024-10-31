@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import cssVars from "../../../styles/cssVars";
+import { DraggabbleWindowOuter } from "../../common/DraggableWindow/DraggableWindow.styles";
 
-const StyledContactWindow = styled.div`
-  position: absolute;
+const StyledContactWindow = styled(DraggabbleWindowOuter)`
   .inner {
     padding: 20px;
   }

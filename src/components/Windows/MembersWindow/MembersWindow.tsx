@@ -3,7 +3,6 @@ import DraggableWindow, {
   DraggableWindowUIProps,
 } from "../../common/DraggableWindow/DraggableWindow";
 import StyledShowsWindow from "./MembersWindow.styles";
-import Button from "../../common/Button/Button";
 
 const members = [
   {

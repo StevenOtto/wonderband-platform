@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import cssVars from "../../../styles/cssVars";
+import { DraggabbleWindowOuter } from "../../common/DraggableWindow/DraggableWindow.styles";
 
-const StyledShowsWindow = styled.div`
+const StyledShowsWindow = styled(DraggabbleWindowOuter)`
   .inner {
     padding: 20px;
   }
@@ -14,6 +15,7 @@ const StyledShowsWindow = styled.div`
     list-style: none;
     margin-bottom: 20px;
     width: 100%;
+    padding-left: 0;
 
     li {
       width: 100%;

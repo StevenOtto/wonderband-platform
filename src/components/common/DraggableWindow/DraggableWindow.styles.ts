@@ -1,5 +1,14 @@
 import styled from "styled-components";
 import cssVars from "../../../styles/cssVars";
+import bp from "../../../styles/functions/bp";
+
+export const DraggabbleWindowOuter = styled.div`
+  position: absolute;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+`;
 
 // type
 type StyledDraggableWindowType = {
@@ -12,7 +21,6 @@ const StyledDraggableWindow = styled.div<StyledDraggableWindowType>`
   width: ${({ $size }) =>
     $size === "small" ? "300px" : $size === "large" ? "900px" : "600px"};
   border-radius: 8px;
-  position: absolute;
 
   ${({ $isOpen }) =>
     $isOpen
@@ -68,6 +76,14 @@ const StyledDraggableWindow = styled.div<StyledDraggableWindowType>`
       border-radius: 4px;
       border: 2px solid ${cssVars.colors.black};
       align-items: center;
+      display: flex;
+      justify-content: center;
+
+      span {
+        line-height: 1;
+        font-weight: 600;
+        margin-bottom: 3px;
+      }
     }
   }
 
