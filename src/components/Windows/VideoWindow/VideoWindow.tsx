@@ -35,9 +35,10 @@ const VideoWindow: React.FC<VideoWindowProps> = ({
   };
 
   useEffect(() => {
-    videoRef.current?.addEventListener("timeupdate", updateTime);
+    const ref = videoRef.current;
+    ref?.addEventListener("timeupdate", updateTime);
     return () => {
-      videoRef.current?.removeEventListener("timeupdate", updateTime);
+      ref?.removeEventListener("timeupdate", updateTime);
     };
   }, []);
 

@@ -40,6 +40,10 @@ const StyledDesktop = styled.div`
     background-size: 300px auto;
     opacity: 0.05;
     pointer-events: none;
+
+    ${bpMax.md`
+      background-size: 150px auto;
+    `}
   }
 
   ul {
@@ -131,7 +135,8 @@ const StyledDesktop = styled.div`
 
         span {
           display: block;
-          max-width: 75px;
+          word-break: break-all;
+          max-width: 70px;
           text-overflow: ellipsis;
           font-size: 14px;
           line-height: 1;

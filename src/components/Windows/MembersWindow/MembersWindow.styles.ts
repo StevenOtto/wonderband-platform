@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import cssVars from "../../../styles/cssVars";
 import { DraggabbleWindowOuter } from "../../common/DraggableWindow/DraggableWindow.styles";
+import bpMax from "../../../styles/functions/bpMax";
 
 const StyledMembersWindow = styled(DraggabbleWindowOuter)`
   .inner {
@@ -15,6 +16,10 @@ const StyledMembersWindow = styled(DraggabbleWindowOuter)`
     grid-template-columns: repeat(3, 1fr);
     align-items: start;
     gap: 40px;
+
+    ${bpMax.md`
+      grid-template-columns: repeat(2, 1fr);
+    `}
 
     li {
       display: flex;

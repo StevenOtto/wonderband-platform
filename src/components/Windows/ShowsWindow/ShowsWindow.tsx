@@ -7,28 +7,28 @@ import Button from "../../common/Button/Button";
 
 const shows = [
   {
-    date: new Date("12-12-2025"),
-    location: "Poppodium 013, Tilburg",
+    date: new Date("09-14-2025"),
+    location: "Tante Lien, Brabant",
   },
   {
-    date: new Date("12-12-2020"),
-    location: "Poppodium 013, Tilburg",
+    date: new Date("08-24-2024"),
+    location: "De Harmonie, Tilburg",
   },
   {
-    date: new Date("12-12-2019"),
-    location: "Poppodium, Tilburg",
+    date: new Date("07-13-2024"),
+    location: "On Other Drugs, Rotterdam",
   },
   {
-    date: new Date("12-12-2018"),
-    location: "Poppodium 013, Tilburg",
+    date: new Date("06-07-2024"),
+    location: "Handpicked Agencies, Breda",
   },
   {
-    date: new Date("12-12-2017"),
-    location: "Poppodium 013, Tilburg",
+    date: new Date("12-15-2023"),
+    location: "Piet Hein Eek, Eindhoven",
   },
   {
-    date: new Date("12-12-2016"),
-    location: "Poppodium 013, Tilburg",
+    date: new Date("06-23-2023"),
+    location: "Fort Sabina, Heijningen",
   },
 ];
 
@@ -39,12 +39,9 @@ const options = {
   day: "numeric",
 };
 
-const ShowsWindow: React.FC<DraggableWindowUIProps> = ({
-  isOpen,
-  style,
-  onStart,
-  closeCallback,
-}) => {
+const ShowsWindow: React.FC<
+  DraggableWindowUIProps & { setContactOpenCallback?: () => void }
+> = ({ isOpen, style, onStart, closeCallback, setContactOpenCallback }) => {
   return (
     <StyledShowsWindow style={style}>
       <DraggableWindow
@@ -80,9 +77,11 @@ const ShowsWindow: React.FC<DraggableWindowUIProps> = ({
               ))}
           </ul>
 
-          <Button theme="primary" text="Boeken" />
-          <Button theme="secondary" text="Boeken" />
-          <Button theme="tertiary" text="Boeken" />
+          <Button
+            theme="tertiary"
+            text="Boeken"
+            onClick={() => setContactOpenCallback && setContactOpenCallback()}
+          />
         </div>
       </DraggableWindow>
     </StyledShowsWindow>

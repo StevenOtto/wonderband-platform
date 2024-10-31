@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import cssVars from "../../../styles/cssVars";
 import { DraggabbleWindowOuter } from "../../../components/common/DraggableWindow/DraggableWindow.styles";
+import bpMax from "../../../styles/functions/bpMax";
 
 const StyledAboutWindow = styled(DraggabbleWindowOuter)`
   .inner {
@@ -19,6 +20,11 @@ const StyledAboutWindow = styled(DraggabbleWindowOuter)`
     );
     background-size: 12px 12px;
     background-repeat: repeat;
+
+    ${bpMax.md`
+      flex-direction: column;
+      padding: 20px;
+    `}
   }
 
   .decoration {

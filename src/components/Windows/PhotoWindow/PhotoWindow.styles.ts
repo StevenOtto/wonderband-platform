@@ -48,6 +48,10 @@ const StyledPhotoWindow = styled(DraggabbleWindowOuter)`
 
   .image-wrap {
     position: relative;
+
+    img {
+      display: block;
+    }
   }
 `;
 

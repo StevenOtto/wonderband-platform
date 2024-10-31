@@ -13,6 +13,7 @@ const PhotoWindow: React.FC<PhotoWindowProps> = ({
   isOpen,
   style,
   onStart,
+  source,
   closeCallback,
 }) => {
   return (
@@ -29,7 +30,7 @@ const PhotoWindow: React.FC<PhotoWindowProps> = ({
               <p className="title">{title}</p>
               <p className="dimensions">{dimensions}</p>
             </StyledMetaData>
-            <img src="https://via.placeholder.com/600x400" alt={title} />
+            <img src={source} alt={title} />
           </div>
         </div>
       </DraggableWindow>

@@ -66,46 +66,46 @@ export type PhotoType = {
 
 const photosList: PhotoType[] = [
   {
-    title: "WHATSAPP-12-06-2023.jpg",
+    title: "WHATSAPP-02-04-2024.jpg",
     size: "1.2MB",
-    source: "/images/Whatsapp-12.06.2023.jpg",
-    dimensions: "500px 500px",
+    source: "/images/600x400.svg",
+    dimensions: "600px x 400px",
   },
   {
     title: "WHATSAPP-12-06-2023.jpg",
     size: "1.2MB",
-    source: "/images/Whatsapp-12.06.2023.jpg",
-    dimensions: "500px 500px",
+    source: "/images/600x400.svg",
+    dimensions: "600px x 400px",
+  },
+  {
+    title: "WETRANSFER-12-06-2024_final.jpg",
+    size: "1.2MB",
+    source: "/images/600x400.svg",
+    dimensions: "600px x 400px",
   },
   {
     title: "WHATSAPP-12-06-2023.jpg",
     size: "1.2MB",
-    source: "/images/Whatsapp-12.06.2023.jpg",
-    dimensions: "500px 500px",
+    source: "/images/600x400.svg",
+    dimensions: "600px x 400px",
+  },
+  {
+    title: "WETRANSFER-12-06-2023.jpg",
+    size: "1.2MB",
+    source: "/images/600x400.svg",
+    dimensions: "600px x 400px",
   },
   {
     title: "WHATSAPP-12-06-2023.jpg",
     size: "1.2MB",
-    source: "/images/Whatsapp-12.06.2023.jpg",
-    dimensions: "500px 500px",
+    source: "/images/600x400.svg",
+    dimensions: "600px x 400px",
   },
   {
-    title: "WHATSAPP-12-06-2023.jpg",
+    title: "WHATSAPP-12-03-2024.jpg",
     size: "1.2MB",
-    source: "/images/Whatsapp-12.06.2023.jpg",
-    dimensions: "500px 500px",
-  },
-  {
-    title: "WHATSAPP-12-06-2023.jpg",
-    size: "1.2MB",
-    source: "/images/Whatsapp-12.06.2023.jpg",
-    dimensions: "500px 500px",
-  },
-  {
-    title: "WHATSAPP-12-06-2023.jpg",
-    size: "1.2MB",
-    source: "/images/Whatsapp-12.06.2023.jpg",
-    dimensions: "500px 500px",
+    source: "/images/600x400.svg",
+    dimensions: "600px x 400px",
   },
 ];
 
@@ -128,9 +128,7 @@ const Desktop: React.FC = () => {
 
   const openPhoto = useCallback((photo: PhotoType) => {
     setOpenWindows((prev) =>
-      prev.includes(WindowID.PHOTO)
-        ? prev.filter((item) => item !== WindowID.PHOTO)
-        : [...prev, WindowID.PHOTO]
+      prev.includes(WindowID.PHOTO) ? prev : [...prev, WindowID.PHOTO]
     );
     setCurrentOpenPhoto(photo);
   }, []);
@@ -149,6 +147,7 @@ const Desktop: React.FC = () => {
             }}
             isOpen={openWindows.includes(item.id)}
             closeCallback={() => closeWindow({ id: item.id })}
+            setContactOpenCallback={() => openWindow({ id: WindowID.CONTACT })}
             onStart={() => setWindowFocus(item.id)}
           />
         );
@@ -194,7 +193,15 @@ const Desktop: React.FC = () => {
       {currentOpenPhoto && (
         <PhotoWindow
           {...currentOpenPhoto}
-          style={{ zIndex: windowFocus === WindowID.PHOTO ? 2 : 1 }}
+          style={{
+            zIndex: windowFocus === WindowID.PHOTO ? 2 : 1,
+            visibility: openWindows.includes(WindowID.PHOTO)
+              ? "visible"
+              : "hidden",
+            pointerEvents: openWindows.includes(WindowID.PHOTO)
+              ? "auto"
+              : "none",
+          }}
           isOpen={openWindows.includes(WindowID.PHOTO)}
           onStart={() => setWindowFocus(WindowID.PHOTO)}
           closeCallback={() => closeWindow({ id: WindowID.PHOTO })}

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import cssVars from "../../../styles/cssVars";
-import bp from "../../../styles/functions/bp";
+import bpMax from "../../../styles/functions/bpMax";
 
 export const DraggabbleWindowOuter = styled.div`
   position: absolute;
@@ -32,6 +32,10 @@ const StyledDraggableWindow = styled.div<StyledDraggableWindowType>`
     pointer-events: none;
     opacity: 0;
     `}
+
+  ${bpMax.md`
+    max-width: 90vw;
+  `}
 
   header {
     border-top-left-radius: 6px;
