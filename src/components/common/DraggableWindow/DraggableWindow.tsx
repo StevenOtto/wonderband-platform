@@ -1,6 +1,7 @@
 import React from "react";
 import Draggable from "react-draggable"; // Both at the same time
 import StyledDragableWindow from "./DraggableWindow.styles";
+import cssVars from "../../../styles/cssVars";
 
 export type DraggableWindowUIProps = {
   isOpen: boolean;
@@ -19,7 +20,11 @@ const DraggableWindow: React.FC<
   DragableWindowProps & DraggableWindowUIProps
 > = ({ title, children, size = "medium", isOpen, closeCallback, onStart }) => {
   return (
-    <Draggable handle=".dragHandle" onStart={onStart}>
+    <Draggable
+      handle=".dragHandle"
+      onStart={onStart}
+      disabled={window.innerWidth < cssVars.breakpoints.md}
+    >
       <StyledDragableWindow $size={size} $isOpen={isOpen}>
         <header className="dragHandle">
           <h2>{title}</h2>

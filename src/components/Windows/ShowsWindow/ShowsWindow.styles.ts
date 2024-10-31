@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import cssVars from "../../../styles/cssVars";
 import { DraggabbleWindowOuter } from "../../common/DraggableWindow/DraggableWindow.styles";
+import bpMax from "../../../styles/functions/bpMax";
 
 const StyledShowsWindow = styled(DraggabbleWindowOuter)`
   .inner {
@@ -21,6 +22,18 @@ const StyledShowsWindow = styled(DraggabbleWindowOuter)`
       width: 100%;
       display: flex;
       text-transform: uppercase;
+      margin-bottom: 5px;
+
+      ${bpMax.md`
+        flex-direction: column;
+        margin-bottom: 15px;
+      `}
+
+      p {
+        ${bpMax.md`
+          padding-bottom: 0;
+        `}
+      }
 
       span {
         flex-grow: 1; // fills out rest of space
@@ -30,6 +43,10 @@ const StyledShowsWindow = styled(DraggabbleWindowOuter)`
         display: block;
         height: 20px;
         margin: 0 15px;
+
+        ${bpMax.md`
+          display: none;
+        `}
       }
     }
   }

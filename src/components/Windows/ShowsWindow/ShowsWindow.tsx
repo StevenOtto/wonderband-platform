@@ -7,32 +7,32 @@ import Button from "../../common/Button/Button";
 
 const shows = [
   {
-    date: new Date("09-14-2025"),
+    date: new Date("2025-09-15"),
     location: "Tante Lien, Brabant",
   },
   {
-    date: new Date("08-24-2024"),
+    date: new Date("2024-08-24"),
     location: "De Harmonie, Tilburg",
   },
   {
-    date: new Date("07-13-2024"),
+    date: new Date("2024-07-13"),
     location: "On Other Drugs, Rotterdam",
   },
   {
-    date: new Date("06-07-2024"),
+    date: new Date("2024-06-07"),
     location: "Handpicked Agencies, Breda",
   },
   {
-    date: new Date("12-15-2023"),
+    date: new Date("2023-12-15"),
     location: "Piet Hein Eek, Eindhoven",
   },
   {
-    date: new Date("06-23-2023"),
+    date: new Date("2023-06-23"),
     location: "Fort Sabina, Heijningen",
   },
 ];
 
-const options = {
+const options: Intl.DateTimeFormatOptions = {
   weekday: "short",
   year: "numeric",
   month: "short",
@@ -54,12 +54,12 @@ const ShowsWindow: React.FC<
           <h3>Aankomende optredens</h3>
           <ul>
             {shows
-              .filter((item) => item.date > new Date())
+              .filter((item) => item.date.getTime() > new Date().getTime())
               .map((show, index) => (
                 <li key={index}>
                   <p>{show.location}</p>
                   <span />
-                  <p>{show.date.toLocaleDateString("nl", options as any)}</p>
+                  <p>{show.date.toLocaleDateString("nl", options)}</p>
                 </li>
               ))}
           </ul>
@@ -67,12 +67,12 @@ const ShowsWindow: React.FC<
           <h3>Afgelopen optredens</h3>
           <ul>
             {shows
-              .filter((item) => item.date < new Date())
+              .filter((item) => item.date.getTime() < new Date().getTime())
               .map((show, index) => (
                 <li key={index}>
                   <p>{show.location}</p>
                   <span />
-                  <p>{show.date.toLocaleDateString("nl", options as any)}</p>
+                  <p>{show.date.toLocaleDateString("nl", options)}</p>
                 </li>
               ))}
           </ul>

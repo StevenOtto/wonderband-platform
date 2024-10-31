@@ -1,10 +1,15 @@
 import styled from "styled-components";
 import { DraggabbleWindowOuter } from "../../common/DraggableWindow/DraggableWindow.styles";
+import bpMax from "../../../styles/functions/bpMax";
 
 const StyledVideoWindow = styled(DraggabbleWindowOuter)`
   .inner {
     position: relative;
     aspect-ratio: 16 / 9;
+
+    ${bpMax.md`
+      aspect-ratio: 9 / 16;
+    `}
   }
 
   .image-wrap {
@@ -17,7 +22,6 @@ const StyledVideoWindow = styled(DraggabbleWindowOuter)`
     position: absolute;
     top: 0;
     left: 0;
-    height: auto;
     object-fit: cover;
   }
 
@@ -30,6 +34,15 @@ const StyledVideoWindow = styled(DraggabbleWindowOuter)`
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
+
+    ${bpMax.md`
+      flex-direction: column;
+      bottom: 10px;
+
+      button {
+        align-self: center;
+      }
+    `}
   }
 `;
 
