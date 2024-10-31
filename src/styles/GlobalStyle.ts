@@ -17,16 +17,19 @@ const GlobalStyle = createGlobalStyle`
     html {
         margin: 0;
         padding: 0;
+        height: 100%;
+        margin: 0;
+        overflow-x: hidden;
     }
 
     body {
         background-color: ${cssVars.colors.blue};
         color: ${cssVars.colors.black};
-        width: 100%;
-        padding: 0;
-        min-height: 100vh;
-        height: 100vh;
-        width: 100vw;
+        padding-top: env(safe-area-inset-top);
+        padding-bottom: env(safe-area-inset-bottom);
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
+        height: 100%;
         overflow-x: hidden;
         margin: 0;
         overscroll-behavior-y: none;
@@ -36,6 +39,10 @@ const GlobalStyle = createGlobalStyle`
 
     main {
         ${distance("padding-top", bpVars.sizes.header_height)};
+    }
+
+    #root {
+        height: 100%;
     }
 
     button {

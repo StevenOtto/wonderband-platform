@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { DraggabbleWindowOuter } from "../../common/DraggableWindow/DraggableWindow.styles";
+import bpMax from "../../../styles/functions/bpMax";
 
 export const StyledMetaData = styled.div`
   position: absolute;
@@ -19,6 +20,10 @@ export const StyledMetaData = styled.div`
   .title {
     font-size: 1rem;
     font-style: italic;
+
+    ${bpMax.md`
+      font-size: 0.7rem;
+    `}
   }
 
   .dimensions {

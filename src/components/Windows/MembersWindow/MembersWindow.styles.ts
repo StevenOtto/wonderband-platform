@@ -6,6 +6,10 @@ import bpMax from "../../../styles/functions/bpMax";
 const StyledMembersWindow = styled(DraggabbleWindowOuter)`
   .inner {
     padding: 40px;
+
+    ${bpMax.md`
+      padding: 30px 0;
+    `}
   }
 
   ul {
@@ -19,6 +23,8 @@ const StyledMembersWindow = styled(DraggabbleWindowOuter)`
 
     ${bpMax.md`
       grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      
     `}
 
     li {
@@ -35,6 +41,11 @@ const StyledMembersWindow = styled(DraggabbleWindowOuter)`
           width: 120px;
           height: 150px;
           object-fit: cover;
+
+          ${bpMax.md`
+            width: 100px;
+            height: 125px;
+          `}
         }
       }
 

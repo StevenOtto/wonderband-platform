@@ -35,6 +35,14 @@ const VideoWindow: React.FC<VideoWindowProps> = ({
   };
 
   useEffect(() => {
+    if (isOpen) {
+      playVideo();
+    } else {
+      pauseVideo();
+    }
+  }, [isOpen]);
+
+  useEffect(() => {
     const ref = videoRef.current;
     ref?.addEventListener("timeupdate", updateTime);
     return () => {

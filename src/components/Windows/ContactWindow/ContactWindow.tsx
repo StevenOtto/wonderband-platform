@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import DraggableWindow, {
   DraggableWindowUIProps,
 } from "../../common/DraggableWindow/DraggableWindow";
@@ -11,6 +11,17 @@ const ContactWindow: React.FC<DraggableWindowUIProps> = ({
   closeCallback,
   onStart,
 }) => {
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+
+  const formSubmit = (event: any) => {
+    event.preventDefault();
+    window.open(
+      `mailto:daphne@handpicked.nl?subject=${subject}&body=${message}`,
+      "_blank"
+    );
+  };
+
   return (
     <StyledContactWindow style={style}>
       <DraggableWindow
@@ -26,23 +37,25 @@ const ContactWindow: React.FC<DraggableWindowUIProps> = ({
             at elit condimentum tincidunt. Curabitur ut libero suscipit,
             ultricies sapien a, lacinia risus.
           </p>
-          <form>
-            <label htmlFor="name">Naam</label>
-            <input type="text" id="name" name="name" placeholder="Naam" />
-            <label htmlFor="email">E-mailadres</label>
+          <form onSubmit={formSubmit}>
+            <label htmlFor="subject">Onderwerp</label>
             <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="hello@wonderband.com"
+              type="text"
+              id="subject"
+              name="subject"
+              onChange={(event) => setSubject(event.target.value)}
             />
             <label htmlFor="message">Bericht</label>
-            <textarea id="message" name="message" />
+            <textarea
+              id="message"
+              name="message"
+              onChange={(event) => setMessage(event.target.value)}
+            />
             <Button
               theme="primary"
               text="versturen"
               onClick={() => {
-                console.log("test");
+                console.log("submit");
               }}
             />
           </form>

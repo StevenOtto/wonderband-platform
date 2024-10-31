@@ -29,7 +29,9 @@ const AboutWindow: React.FC<DraggableWindowUIProps> = ({
                 thought to have scrambled parts.
               </p>
             </div>
-            <div className="decoration" style={{ height: "100px" }}></div>
+            <div className="decoration" style={{ height: "100px" }}>
+              <img src="/images/sun.png" alt="sun illustration" />
+            </div>
             <div className="text-wrap text-wrap--blue">
               <p>
                 Lorem ipsum, or lipsum as it is sometimes known, is dummy text
@@ -41,7 +43,9 @@ const AboutWindow: React.FC<DraggableWindowUIProps> = ({
           </div>
 
           <div className="right">
-            <div className="decoration" style={{ height: "100px" }}></div>
+            <div className="decoration" style={{ height: "100px" }}>
+              <img src="/images/venus.png" alt="venus illustration" />
+            </div>
             <div className="text-wrap text-wrap--purple">
               <p>
                 Lorem ipsum, or lipsum as it is sometimes known, is dummy text

@@ -24,6 +24,7 @@ const StyledAboutWindow = styled(DraggabbleWindowOuter)`
     ${bpMax.md`
       flex-direction: column;
       padding: 20px;
+      gap: 10px;
     `}
   }
 
@@ -34,6 +35,18 @@ const StyledAboutWindow = styled(DraggabbleWindowOuter)`
     justify-content: center;
     align-items: center;
     margin: 60px 0;
+
+    &:first-of-type {
+      img {
+        transform: translateX(-20px);
+      }
+    }
+
+    img {
+      width: 140px;
+      height: 140px;
+      transform: translateX(20px);
+    }
   }
 
   .text-wrap {

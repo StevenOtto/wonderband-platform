@@ -8,7 +8,7 @@ const StyledVideoWindow = styled(DraggabbleWindowOuter)`
     aspect-ratio: 16 / 9;
 
     ${bpMax.md`
-      aspect-ratio: 9 / 16;
+      aspect-ratio: 9 / 13;
     `}
   }
 
