@@ -70,6 +70,41 @@ const GlobalStyle = createGlobalStyle`
             text-decoration: underline;
         }
     }
+
+    .crt-on-effect {
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        animation: crtOn 0.8s forwards;
+        pointer-events: none;
+    }
+
+    @keyframes crtOn {
+        0% {
+            opacity: 1;
+            transform: scale(1);
+        }
+        10% {
+            opacity: 0.8;
+            transform: scale(1.05, 0.2);
+        }
+        30% {
+            opacity: 0.7;
+            transform: scale(1.1, 0.1);
+        }
+        50% {
+            opacity: 0.5;
+            transform: scale(1, 1);
+        }
+        100% {
+            opacity: 0;
+            transform: scale(1, 1);
+        }
+    }
 `;
 
 export default GlobalStyle;

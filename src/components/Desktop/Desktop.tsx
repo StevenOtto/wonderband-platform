@@ -161,7 +161,7 @@ const Desktop: React.FC = () => {
         {menuList.map((item: MenuListType, index) => (
           <li key={index}>
             <button
-              onClick={() => openWindow(item)}
+              onDoubleClick={() => openWindow(item)}
               className={windowFocus === item.id ? "active" : ""}
             >
               <img src={item.icon} alt={item.title} />
@@ -175,7 +175,7 @@ const Desktop: React.FC = () => {
         {photosList.map((item, index) => (
           <li key={index}>
             <button
-              onClick={() => openPhoto(item)}
+              onDoubleClick={() => openPhoto(item)}
               className={currentOpenPhoto === item ? "active" : ""}
             >
               <img src={"/images/photo.png"} alt={item.title} />

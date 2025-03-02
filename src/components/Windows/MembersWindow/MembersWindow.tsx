@@ -30,12 +30,6 @@ const members = [
     icon: "https://via.placeholder.com/50",
   },
   {
-    name: "Vere",
-    role: "Zang",
-    image: "https://via.placeholder.com/150",
-    icon: "https://via.placeholder.com/50",
-  },
-  {
     name: "Martin",
     role: "Geluidstechnicus",
     image: "https://via.placeholder.com/150",

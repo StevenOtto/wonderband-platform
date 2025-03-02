@@ -27,7 +27,7 @@ const StyledDesktop = styled.div`
     `}
   }
 
-  &::before {
+  /* &::before {
     content: "";
     position: absolute;
     z-index: 0;
@@ -44,7 +44,7 @@ const StyledDesktop = styled.div`
     ${bpMax.md`
       background-size: 150px auto;
     `}
-  }
+  } */
 
   ul {
     z-index: 1;
@@ -145,6 +145,74 @@ const StyledDesktop = styled.div`
       }
     }
   }
+
+  &::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      rgba(18, 16, 16, 0) 50%,
+      rgba(0, 0, 0, 0.1) 50%
+    );
+    background-size: 100% 4px;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  // Voeg deze animatie toe aan de StyledLoader
+  @keyframes flicker {
+    0% {
+      opacity: 0.97;
+    }
+    5% {
+      opacity: 0.9;
+    }
+    10% {
+      opacity: 0.97;
+    }
+    15% {
+      opacity: 1;
+    }
+    20% {
+      opacity: 0.97;
+    }
+    25% {
+      opacity: 0.9;
+    }
+    30% {
+      opacity: 0.97;
+    }
+    35% {
+      opacity: 1;
+    }
+    40% {
+      opacity: 0.97;
+    }
+    45% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.97;
+    }
+    55% {
+      opacity: 1;
+    }
+    60% {
+      opacity: 0.97;
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.97;
+    }
+  }
+
+  // En pas deze toe op de hele loader component door toe te voegen:
+  animation: flicker 5s infinite;
 `;
 
 export default StyledDesktop;
